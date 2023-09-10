@@ -1,0 +1,113 @@
+/* #445069 light */
+/* #252B48 dark */
+
+
+*{
+    margin: 0;padding: 0;box-sizing: border-box;
+}
+main{
+    background-color:#FFEEF4 ;
+    height: 100vh;
+    width: 100vw;
+}
+.app
+{
+    background-color: #445069;
+    max-width: 350px;
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+    box-shadow: 8px 6px 10px #252B48 ;
+
+}
+.display{
+    height: 100px;
+    width: 100%;
+    padding: 20px;
+    padding-bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 15px;
+
+}
+
+.previous{
+    height: 50%;
+    width: 80%;
+    text-align: right;
+    align-self: center;
+    background-color: #FFEEF4;
+    border: none;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    font-size: 25px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+
+    padding-right: 5px;
+
+}
+footer{
+ position: fixed;
+ bottom: 0px;
+ width: 100%;
+ text-align: center;
+ height: 30px;
+ color: #252B48;
+ font-weight: bold;
+}
+.output{
+    width: 80%;
+    height: 50%;
+    background-color: #FFEEF4;
+    border: none;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    font-size: 25px;
+    padding-right: 5px;
+    
+}
+.buttons{
+    width: 100%;
+    padding: 28px;
+    padding-top: 20px;
+   
+    display: flex;
+    flex-direction: column;
+
+}
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn{
+    height: 50px;
+    margin: 8px;
+    width: 50px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #252B48;
+    color: white;
+    box-shadow: -3px -5px 10px #252B48;
+}
+.buttons .row:nth-child(5) .btn:nth-child(3)
+{
+    width: 116px;
+}
+@media screen and (max-width:290px) {
+    .btn{
+        height: 33px;
+    }
+}

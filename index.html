@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <div class="app">
+            <div class="display">
+                <div class="previous">
+                 
+                </div>
+
+             <div class="output" >
+
+
+             </div>
+            </div>
+            <div class="buttons">
+                <div class="row">
+                    <div class="btn">AC</div>
+                    <div class="btn" >DE</div>
+                    <div class="btn" >.</div>
+                    <div class="btn">/</div>
+                </div>
+             <div class="row">
+                <div class="btn" >7</div>
+                <div class="btn" >8</div>
+                <div class="btn" >9</div>
+                <div class="btn" >*</div>
+             </div>
+             <div class="row">
+                <div class="btn" >4</div>
+                <div class="btn" >5</div>
+                <div class="btn" >6</div>
+                <div class="btn" >-</div>
+             </div>
+             <div class="row">
+                    
+                <div class="btn" >1</div>
+                <div class="btn" >2</div>
+                <div class="btn">3</div>
+                <div class="btn">+</div>
+             </div>
+         <div class="row">
+            <div class="btn" >00</div>
+            <div class="btn">0</div>
+            <div class="btn" id="equal" >=</div>
+         </div>
+         
+            </div>
+        </div>
+
+    </main>
+    <footer>&copy Hasnain Shahzad</footer>
+    <script>
+        const previous=document.querySelector(".previous");
+        const prev=`
+          <div class="previous"></div>
+        `
+        output=document.querySelector(".output");
+        equalBtn=document.querySelector("#equal");
+        buttonsDiv=document.querySelector(".buttons");
+        let ans=false;
+
+        
+        equalBtn.addEventListener("click",showAnswerAndReset)
+        function showAnswerAndReset(){
+            if(ans==false){
+            previous.innerHTML=output.innerHTML;
+            output.innerHTML=eval(output.innerHTML);
+            previous.innerHTML+=`=${output.innerHTML}`
+            }
+          
+            ans=true;
+
+        }
+
+        function outputNumbers(e){
+           
+                let x=e.target.innerText;
+            if(ans===true && x!="="){
+                output.innerHTML="";
+                ans=false;
+            }
+            if(x==="="){
+                showAnswerAndReset();
+            }else if(x==="AC"){
+                output.innerHTML="";
+
+            }
+            else if(x==="DE"){
+                  output.innerHTML=output.innerHTML.toString().slice(0,-1);
+            }
+            else{
+                output.innerHTML+=x;
+
+            }
+            }
+            
+        for(let i=0;i<buttonsDiv.childElementCount;i++){
+
+            for(let j=0;j<buttonsDiv.children[i].childElementCount;j++){
+
+                 buttonsDiv.children[i].children[j].addEventListener("click",outputNumbers);
+            }
+        }
+      
+    </script>
+</body>
+</html>
